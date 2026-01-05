@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+    nav{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        padding: 15px;
+        background-color:  #2c3e50;
+        color: white
+    }
+    .name{
+        font-size: 20px;
+        margin-left: 30px;
+    }
+    .navbar {
+        list-style: none;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 12px;
+        font-size: 15px;
+        text-decoration: none;
+        margin-right: 20px;
+}
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 50px;
+        margin: 0;
+        padding: 0;
+}
+
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+}
+
+    .navbar ul li a:hover {
+        color:#3498db;
+}
+    .main {
+        background: #0097e6;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+        font-size: 19px;
+        margin-bottom: 20px
+}
+
+
+    .content {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        height: 30vh;
+}
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+}
+
+    .btn {
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        background: #e74c3c;
+        color: white;
+}
+
+    .btn.red:hover {
+        background: #c0392b;
+}
+
+    .btn.outline {
+        border: 2px solid white;
+        background-color: #0097e6;
+        color: white;
+}
+
+    .btn.outline:hover {
+        background-color:white;
+        color: black;
+}
+        .courses{
+    padding: 60px 20px;
+    text-align: center;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Nabla:EDPT,EHLT@30..200,24&display=swap");
+.courses h2  {
+	font-size: 12vw;
+	font-family: Nabla;
+  animation: depth 1s ease-in-out alternate infinite;
+  position: relative;
+  display: inline-block;
+  font-variation-settings: "EDPT" 30;
+  font-palette: --Nabla;
+  @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+          animation-delay: $i * 0.2s;
+      }
+  }
+}
+
+@font-palette-values --Nabla {
+	font-family: Nabla;
+	base-palette: 2;
+}
+
+@keyframes depth {
+	0% {
+		transform: translatex(0) translatey(0);
+	}
+	100% {
+		font-variation-settings: "EDPT" 200;
+		transform: translatex(0.15em) translatey(0.1em);
+	}
+}
+
+  @keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+  .description{
+    margin-bottom: 40px;
+    color: #666;
+    margin-top: 30px;
+    /* font-size: 0.95rem; */
+  }
+  hr{
+    width: 80px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 2px solid #3498db;
+    border-radius: 3px;
+  }
+  .cardcontainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .card{
+    background: white;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 10px rgba(20, 20, 20, 0.1); */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+     transition: all 0.5s ease;
+    position: relative;
+      transform-origin: center;
+  }
+  .card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+        transition: transform 0.5s ease, filter 0.5s ease;
+
+  }
+  .card h3{
+    font-size: 1.2rem;
+    margin: 15px;
+    color: #2c3e50;
+  }
+  .card p{
+    margin: 0 15px 15px;
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.9rem;
+  }
+  .card span{
+    display: block;
+    margin: 0 15px 15px;
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  .card:hover {
+  /* transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: 1px solid rgba(255,255,255,0.4);
+  cursor: pointer; */
+   transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #ffffff, #f5f9ff);
+}
+.card:hover img {
+  /* transform: scale(1.15); */
+   transform: scale(1.08);
+  filter: brightness(1.05) contrast(1.05);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-position 1.5s ease;
+}
+.card:hover::before {
+  opacity: 1;
+  background-position: 100% 0;
+  animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text content */
+/* .card h3, .card p, .card span {
+  position: relative;
+  z-index: 2;
+  padding: 0 16px;
+  transition: color 0.3s ease;
+} */
+
+@media (max-width: 992px) {
+  .cardcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .cardcontainer {
+    grid-template-columns: 1fr;
+  }
+
+  /* .card img {
+    height: 200px;
+  } */
+}
+
+@media (max-width: 640px) {
+  .menu ul {
+    display: none;
+  }
+}
+ @media (max-width: 640px) {
+  .main .content h1 {
+    font-size: 22px;   
+    line-height: 1.3;  
+    text-align: center;
+    margin-top: 60px; 
+    padding: 0 10px;   
+  }
+  }
+        .testimonials {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.testimonials .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.testimonials .section-subtitle {
+    opacity: 0.8;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.testimonial-card {
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.testimonial-card h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.date {
+    font-size: 13px;
+    opacity: 0.7;
+    float: right;
+}
+
+.testimonial-card p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .date {
+        float: none;
+        display: block;
+        margin-top: 3px;
+    }
+.testimonial-card:hover {
+    background-color: #0097e6;
+    color: turquoise;
+
+}
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="name">
+                Taj Institute Of Information Technology
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Courses</a></li>
+                    <li><a href="">Admission</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main">
+        <h1>
+            Hello  In The Word Of Web Development
+        </h1>
+        <div class="content">
+        <p>
+            I am a passionate web development instructor at Taj Institute Of Information Technology with over 5
+            years odf experience in teaching modern web technologies.My mission is to empower students with
+            practical skills in HTML,Css,JavaScript,and responsive design to build the next generation of web
+            application
+        </p>
+        </div>
+        <div class="buttons">
+            <button class="btn red">
+                Contact Us
+            </button>
+            <button class="btn outline">
+                View My Resume
+            </button>
+        </div>
+    </section>
+
+    </section>
+    <section class="courses">
+        <h2>Courses We Offer</h2>
+        <hr>
+    <p class="description">Explore our comprehensive range of IT courses designed to equip you with in-demand <br>skiills for today's digital economy.</p>
+    <div class="cardcontainer">
+        <div class="card">
+            <img src="basicit - Copy.png " alt="">
+            <h3>Basic IT course</h3>
+            <p>Learn fundamental computer skills, Microsoft Office, and basic internet usage for beginners.</p>
+            <span>8,000</span>
+        </div>
+        <div class="card">
+            <img src="graphicdesigning - Copy.png" alt="">
+            <h3>Graphic Designing Course</h3>
+            <p>Master Adobe Photoshop and Illustrator to create stunning visual designs and graphics.</p>
+            <span>12,000</span>
+        </div>
+        <div class="card">
+            <img src="graphicdesigning - Copy.png" alt="">
+            <h3>Advance Graphic Course</h3>
+            <p>Advanced techniques in graphic design including motion graphics and 3D modeling.</p>
+            <span>18,000</span>
+        </div>
+        <div class="card">
+            <img src="digitalmarketing - Copy.jpg" alt="">
+            <h3>Digital Marketing Course</h3>
+            <p>Learn SEO, social media marketing, email marketing, and Google Ads strategies.</p>
+            <span>15,000</span>
+        </div>
+        <div class="card">
+            <img src="freelancing - Copy.jpeg" alt="">
+            <h3>Freelancing Course</h3>
+            <p>Learn how to start and grow your freelance business on platforms like Upwork and Fiverr.</p>
+            <span>10,000</span>
+        </div>
+         <div class="card">
+            <img src="webdevelopment - Copy.jpg" alt="">
+            <h3>Website Development Course</h3>
+            <p>Full-stack web development with HTML, CSS, JavaScript, PHP, and MySQL database.</p>
+            <span>25,000</span>
+        </div>
+        <div class="card">
+            <img src="uiux - Copy.jpg" alt="">
+            <h3>UI/UX Course</h3>
+            <p>User interface and experience design principles, wireframing, and prototyping techniques..</p>
+            <span>20,000</span>
+        </div>
+        <div class="card">
+            <img src="python - Copy.jpeg" alt="">
+            <h3>Python Programming Course</h3>
+            <p>Learn Python programming from basics to advanced concepts including data analysis.</p>
+            <span>22,000</span>
+        </div>
+    </div>
+    </section>
+   <section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">What Our Students Say</h2>
+        <p class="section-subtitle">
+            Hear from our successful students about their experience at Taj Institute of Information Technology.
+        </p>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <h3>Ali Raza</h3>
+                <span class="date">Oct 15, 2025</span>
+                <p>The Website Development Course helped me become a freelance developer. The instructor explained everything in a practical way with real projects.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <h3>Fatima Khan</h3>
+                <span class="date">Sep 20, 2025</span>
+                <p>I joined the Graphic Designing Course and now I'm working as a designer. The environment and mentorship were truly inspiring!</p>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <h3>Ahmed Bilal</h3>
+                <span class="date">Aug 05, 2025</span>
+                <p>Professional teachers, modern labs, and supportive management. Highly recommend for beginners and advanced learners alike!</p>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <h3>Sara Malik</h3>
+                <span class="date">Jul 18, 2025</span>
+                <p>The Digital Marketing Course opened new career opportunities for me. Learned SEO, Google Ads, and social media campaigns practically.</p>
+                <div class="stars">★★★★★</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
